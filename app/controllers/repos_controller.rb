@@ -1,5 +1,6 @@
 class ReposController < ApplicationController
   def index
-    @repos = Repo.all 
+    @user = current_user
+    @repos = Repo.all
   end
 end
