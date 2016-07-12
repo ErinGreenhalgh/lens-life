@@ -1,6 +1,12 @@
+<%= render partial: 'shared/navbar' %>
 <% if current_user %>
-  <ul>Welcome, <%= current_user.nickname %></ul>
-  <ul><%= link_to "Log Out", logout_path, method: :delete %></ul>
-<% else %>
-  <%= link_to "Log In with Github", github_login_path %>
-<% end  %>
+  <div class="container basic-info">
+    <div class="profile-pic">
+      <img src="<%= @user.profile_pic %>" alt="profile-pic" />
+    </div>
+    <div class="username">
+      <h1><%= @user.nickname %></h1>
+    </div>
+  </div>
+  <%= link_to "My Repos", repos_path %>
+<% end %>
