@@ -1,3 +1,9 @@
-<% @repos.each do |repo| %>
-<%= repo.name %>
-<% end  %>
+<%= render partial: "shared/navbar" %>
+
+<div class="container">
+  <ul>
+    <% @repos.each do |repo| %>
+      <li> <%= repo.name %></li>
+    <% end  %>
+  </ul>
+</div>
