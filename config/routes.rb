@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/auth/github', as: :github_login
 
   get '/auth/github/callback' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy', as: :logout
 end
