@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20160712010530) do
     t.string   "uid"
     t.string   "nickname"
     t.string   "profile_pic"
-    t.string   "bio"
     t.string   "oauth_token"
   end
 

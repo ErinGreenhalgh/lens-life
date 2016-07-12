@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'users#show'
-  get '/auth/instagram', as: :instagram_login
+  get '/auth/github', as: :github_login
 
-  get '/auth/instagram/callback' => 'sessions#create'
+  get '/auth/github/callback' => 'sessions#create'
 end

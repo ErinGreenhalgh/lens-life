@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-oauth2'
-gem 'omniauth-instagram'
+gem 'omniauth-github'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
