@@ -8,6 +8,7 @@ class UserSeesTheirReposTest < ActionDispatch::IntegrationTest
   end
 
   test "they see a list of all their repos" do
-    
+    user = User.create()
+    #could access token from figaro
   end
 end
