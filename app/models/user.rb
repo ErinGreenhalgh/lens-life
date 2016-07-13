@@ -7,7 +7,14 @@ class User < ActiveRecord::Base
       nickname:    auth_info.info.nickname,
       profile_pic: auth_info.info.image,
       oauth_token: auth_info.credentials.token
+      
     )
     user
   end
+
+  def starred_count(user)
+    UsersService.new.get_starred_repos(user).count
+  end
+
+  def
 end
