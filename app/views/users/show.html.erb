@@ -8,15 +8,17 @@
       <h1><%= @user.nickname %></h1>
     </div>
     <div class="row stats">
-      <div class="col-md-2" id="followers">
+      <div class="col-md-2 text-center" id="followers">
+        <%= @user.followers %><br>
         <p>followers</p>
       </div>
-      <div class="col-md-2" id="starred">
-        <%= current_user.starred_count(current_user) %><br>
+      <div class="col-md-2 text-center" id="starred">
+        <%= @user.starred_count(current_user) %><br>
         <p>starred</p>
       </div>
-      <div  class="col-md-2" id="following">
-        Following
+      <div  class="col-md-2 text-center" id="following">
+        <%= @user.following %><br>
+        <p>following</p>
       </div>
     </div>
   </div>
