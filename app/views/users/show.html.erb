@@ -7,6 +7,20 @@
     <div class="username">
       <h1><%= @user.nickname %></h1>
     </div>
+    <div class="row stats">
+      <div class="col-md-2 text-center" id="followers">
+        <%= @user.followers %><br>
+        <p>followers</p>
+      </div>
+      <div class="col-md-2 text-center" id="starred">
+        <%= @user.starred_count(current_user) %><br>
+        <p>starred</p>
+      </div>
+      <div  class="col-md-2 text-center" id="following">
+        <%= @user.following %><br>
+        <p>following</p>
+      </div>
+    </div>
   </div>
   <%= link_to "My Repos", repos_path %>
 <% end %>

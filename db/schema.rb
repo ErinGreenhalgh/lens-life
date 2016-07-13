@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712010530) do
+ActiveRecord::Schema.define(version: 20160713015525) do
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160712010530) do
     t.string   "nickname"
     t.string   "profile_pic"
     t.string   "oauth_token"
+    t.string   "followers"
+    t.string   "following"
   end
 
 end

@@ -6,8 +6,15 @@ class User < ActiveRecord::Base
       uid:         auth_info.uid,
       nickname:    auth_info.info.nickname,
       profile_pic: auth_info.info.image,
-      oauth_token: auth_info.credentials.token
+      oauth_token: auth_info.credentials.token,
+      followers:   auth_info.extra.raw_info.followers,
+      following:   auth_info.extra.raw_info.following
     )
     user
   end
+
+  def starred_count(user)
+    UsersService.new.get_starred_repos(user).count
+  end
+
 end
