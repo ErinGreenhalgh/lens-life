@@ -17,4 +17,6 @@ class User < ActiveRecord::Base
     UsersService.new.get_starred_repos(user).count
   end
 
+  
+
 end
