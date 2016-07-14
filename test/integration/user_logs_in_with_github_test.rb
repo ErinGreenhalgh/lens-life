@@ -9,12 +9,14 @@ class UserLogsInWithGithubTest < ActionDispatch::IntegrationTest
   end
 
   test "logging in" do
-    visit '/'
-    assert_equal 200, page.status_code
-    click_link "Log In with Github"
-    assert_equal '/', current_path
-    assert page.has_content?("Welcome, Cool Guy")
-    assert page.has_content?("Log Out")
+    VCR.use_cassette("user") do
+      visit '/'
+      assert_equal 200, page.status_code
+      click_link "Log In with Github"
+      assert_equal '/', current_path
+      assert page.has_content?("Welcome, Cool Guy")
+      assert page.has_content?("Log Out")
+      end
   end
 
   def stub_omniauth
@@ -27,6 +29,12 @@ class UserLogsInWithGithubTest < ActionDispatch::IntegrationTest
       },
       credentials: {
         token: "pizza"
+      },
+      extra: {
+        raw_info: {
+          followers: 1,
+          following: 1
+        }
       }
       })
   end
