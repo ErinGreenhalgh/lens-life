@@ -6,7 +6,7 @@ class EventTest < ActiveSupport::TestCase
       user = User.create(uid: "1234",
                          nickname: "ErinGreenhalgh",
                          oauth_token: ENV["test_token"] )
-      commit = Event.commits(user).first.first
+      commit = Event.commits(user).first
       sha = "e511f4e5b61eac416c5ad97935ef0930e3ae24fa"
 
       assert_equal sha, commit.sha

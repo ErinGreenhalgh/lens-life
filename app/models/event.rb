@@ -34,7 +34,7 @@ class Event
       data.map do |commit|
         OpenStruct.new(commit)
       end
-    end
+    end.flatten
   end
-  
+
 end

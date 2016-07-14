@@ -1,13 +1,23 @@
 require "test_helper"
 
 class UsersServiceTest < ActiveSupport::TestCase
-  test "it gets recent commits for a repo" do
+  def setup
+    @user = User.create(uid: "1234",
+                       nickname: "ErinGreenhalgh",
+                       oauth_token: ENV["test_token"] )
+  end
+
+  test "gets starred repos" do
     VCR.use_cassette("user") do
-      user = User.create()
-      events = UsersService.new.get_events(user)
+      assert_equal 1, UsersService.new.get_starred_repos(@user).count
+    end
+  end
 
-      assert_equal 1, commits.count
 
+  test "it gets a user's event data" do
+    VCR.use_cassette("user_no_token") do
+      events = UsersService.new.get_events(@user)
+      assert_equal "4275555661", events.first[:id]
     end
   end
 
