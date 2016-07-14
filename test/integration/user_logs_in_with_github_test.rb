@@ -16,7 +16,7 @@ class UserLogsInWithGithubTest < ActionDispatch::IntegrationTest
       assert_equal '/', current_path
       assert page.has_content?("Welcome, Cool Guy")
       assert page.has_content?("Log Out")
-      end
+    end
   end
 
   def stub_omniauth

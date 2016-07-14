@@ -1,8 +1,9 @@
 <%= render partial: 'shared/navbar' %>
 <% if current_user %>
-  <div class="container basic-info">
+<div class="row">
+  <div class="container basic-info col-md-6">
     <div class="profile-pic">
-      <img src="<%= @user.profile_pic %>" alt="profile-pic" />
+      <img id="profile_pic" src="<%= @user.profile_pic %>" alt="profile-pic" />
     </div>
     <div class="username">
       <h1><%= @user.nickname %></h1>
@@ -22,6 +23,10 @@
       </div>
     </div>
   </div>
-  <%= link_to "My Repos", repos_path %>
-  <%= link_to "My Commits", events_path %>
+
+  <div class='col-md-6'>
+    <div class='btn btn-large btn-info column-md-6'><%= link_to "My Repos", repos_path, class: "info_link" %></div>
+    <div class='btn btn-large btn-info column-md-6'><%= link_to "Recent Commits", events_path, class: "info_link" %></div>
+  </div>
+</div>
 <% end %>
