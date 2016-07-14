@@ -1,0 +1,8 @@
+<h1>All Commits</h1>
+<ul>
+  <% @commits.each do |commit| %>
+    <% commit.each do |c| %>
+      <li><%= c.sha %><br><%= c.message %></li>
+    <% end %>
+  <% end %>
+</ul>
