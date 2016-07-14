@@ -1,2 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.info_link {
+  color: black;
+}
+
+.info_links:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.bottom_padding {
+  padding: 50px;
+}
+
+#profile_pic {
+  border-radius: 25px;
+  width: 75%;
+  height: 75%;
+}
