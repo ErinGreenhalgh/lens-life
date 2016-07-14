@@ -23,20 +23,18 @@ class Event
     end
   end
 
-  def self.all_commits(user)
+  def self.payload_commit_data(user)
     push_events(user).map do |event|
       event.payload[:commits]
     end
   end
 
   def self.commits(user)
-    all_commits(user).map do |commit|
-      commit.map do |c|
-        OpenStruct.new(c)
-      end       
+    payload_commit_data(user).map do |data|
+      data.map do |commit|
+        OpenStruct.new(commit)
+      end
     end
   end
-
-
-
+  
 end
